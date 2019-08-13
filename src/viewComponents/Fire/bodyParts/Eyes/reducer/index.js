@@ -1,7 +1,10 @@
-import INNER_BODY_NEUTRAL from "../../../assets/neutral/body-inner.png";
-import INNER_BODY_HAPPY from "../../../assets/happy/body-inner.png";
-import OUTER_BODY_NEUTRAL from "../../../assets/neutral/body-outer.png";
-import OUTER_BODY_HAPPY from "../../../assets/happy/body-outer.png";
+import HAPPY_LEFT from "../../../assets/happy/eye-left.png";
+import HAPPY_RIGHT from "../../../assets/happy/eye-right.png";
+
+import NEUTRAL_LEFT_EYE from "../../../assets/neutral/eye-left.png";
+import NEUTRAL_RIGHT_EYE from "../../../assets/neutral/eye-right.png";
+import NEUTRAL_LEFT_EYEBROW from "../../../assets/neutral/eyebrow-left.png";
+import NEUTRAL_RIGHT_EYEBROW from "../../../assets/neutral/eyebrow-right.png";
 
 const variants = {
   neutral: {
@@ -60,8 +63,12 @@ const reducer = (state, action) => {
       return [
         ...state,
         {
-          outer: OUTER_BODY_HAPPY,
-          inner: INNER_BODY_HAPPY,
+          assets: {
+            eyeLeft: HAPPY_LEFT,
+            eyeRight: HAPPY_RIGHT,
+            eyebrowLeft: "",
+            eyebrowRight: ""
+          },
           animationVariant: variants.happy,
           speed: 500
         }
@@ -70,8 +77,12 @@ const reducer = (state, action) => {
       return [
         ...state,
         {
-          outer: OUTER_BODY_NEUTRAL,
-          inner: INNER_BODY_NEUTRAL,
+          assets: {
+            eyeLeft: NEUTRAL_LEFT_EYE,
+            eyeRight: NEUTRAL_RIGHT_EYE,
+            eyebrowLeft: NEUTRAL_LEFT_EYEBROW,
+            eyebrowRight: NEUTRAL_RIGHT_EYEBROW
+          },
           animationVariant: variants.neutral,
           speed: 800
         }

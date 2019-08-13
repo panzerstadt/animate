@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 
 import useInterval from "../hooks/useInterval";
@@ -12,25 +12,28 @@ const Fire = ({ emotion, movement, ...props }) => {
   // what are the actions that a fire can do and exports it as a
   // complete fire character
   console.log(props);
-  // useInterval(() => {
-  //   props.becomeHappy();
-  // }, 3000);
+  const [bipolar, setBipolar] = useState(false);
+  useInterval(() => {
+    setBipolar(p => !p);
+  }, 5000);
 
   useEffect(() => {
-    props.becomeNeutral();
-  }, []);
+    bipolar ? props.becomeNeutral() : props.becomeHappy();
+  }, [bipolar]);
 
   console.log(emotion);
   console.log(movement);
+  console.log("FIRE COMPONENT: ", emotion.emotion);
   return (
     <FireCharacter emotion={emotion.emotion} movement={movement.movement} />
   );
 };
 
 const mapStateToProps = state => {
+  // last item in state. possible to grab sequence
   return {
-    emotion: state.emotion,
-    movement: state.movement
+    emotion: state.emotion.length > 0 && state.emotion.slice(-1)[0],
+    movement: state.movement.length > 0 && state.movement.slice(-1)[0]
   };
 };
 
