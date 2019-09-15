@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+
+  border: 1px solid blue;
+}
+
+.hand {
+  height: 25px;
+  top: 25%;
+}
+
+.leftHand {
+  composes: hand;
+  position: absolute;
+  left: -5%;
+}
+
+.rightHand {
+  composes: hand;
+  position: absolute;
+  left: 88%;
+}

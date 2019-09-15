@@ -1,0 +1,21 @@
+.container {
+  position: relative;
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.inner {
+  position: absolute;
+  height: 60%;
+
+  left: 55px;
+  bottom: 0;
+}
+
+.outer {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  top: 0;
+}

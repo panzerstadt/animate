@@ -7,6 +7,7 @@ import withProvider from "./redux/provider";
 import store from "./redux/store";
 
 import Fire from "./components/Fire";
+import Chick from "./components/Chick";
 
 const App = ({ ...props }) => {
   console.log(store.getState());
@@ -26,7 +27,7 @@ const App = ({ ...props }) => {
         >
           Learn React
         </a>
-        <Fire />
+        <Chick />
       </header>
     </div>
   );

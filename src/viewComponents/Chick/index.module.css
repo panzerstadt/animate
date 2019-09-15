@@ -1,0 +1,29 @@
+.container {
+  position: relative;
+  height: 300px;
+  width: 300px;
+  border: 1px solid red;
+}
+
+.bodyPart {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.body {
+  composes: bodyPart;
+  z-index: 1;
+}
+
+.eye {
+  composes: bodyPart;
+  z-index: 2;
+}
+
+.hand {
+  composes: bodyPart;
+  z-index: 0;
+}

@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+  min-height: 100px;
+  height: 100%;
+  width: 100%;
+}
+
+.eye {
+  height: 15px;
+  top: 25%;
+}
+
+.leftEye {
+  composes: eye;
+  position: absolute;
+  left: 25%;
+}
+
+.rightEye {
+  composes: eye;
+  position: absolute;
+  left: 58%;
+}
