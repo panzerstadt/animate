@@ -7,8 +7,8 @@ import useInterval from "../../../../hooks/useInterval";
 import reducer from "../../reducers";
 
 // what can this body part do?
-const Hand = ({ emotion, className }) => {
-  const [bodyState, dispatch] = useReducer(reducer.hand, [
+const Feet = ({ emotion, className }) => {
+  const [bodyState, dispatch] = useReducer(reducer.feet, [
     { assets: {}, animationVariant: {}, speed: 700 }
   ]);
 
@@ -34,16 +34,16 @@ const Hand = ({ emotion, className }) => {
     <div className={className}>
       <div className={styles.container}>
         <motion.img
-          className={styles.leftHand}
+          className={styles.leftFoot}
           src={lastAction.assets.eyeLeft}
-          alt="left hand"
+          alt="left foot"
           animate={toggle ? "one" : "two"}
           variants={lastAction.animationVariant.left}
         />
         <motion.img
-          className={styles.rightHand}
+          className={styles.rightFoot}
           src={lastAction.assets.eyeRight}
-          alt="right hand"
+          alt="right foot"
           animate={toggle ? "one" : "two"}
           variants={lastAction.animationVariant.right}
         />
@@ -52,4 +52,4 @@ const Hand = ({ emotion, className }) => {
   );
 };
 
-export default Hand;
+export default Feet;

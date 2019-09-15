@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 import styles from "./index.module.css";
 
 import useInterval from "../../../../hooks/useInterval";
-import reducer from "./reducer";
+import reducer from "../../reducers";
 
 // what can this body part do?
 const Eye = ({ emotion, className }) => {
-  const [bodyState, dispatch] = useReducer(reducer, [
+  const [bodyState, dispatch] = useReducer(reducer.eye, [
     { assets: {}, animationVariant: {}, speed: 700 }
   ]);
 

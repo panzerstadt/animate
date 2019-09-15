@@ -1,4 +1,4 @@
-import OUTER_BODY from "../../../assets/chick_body.png";
+import OUTER_BODY from "../assets/chick_body.png";
 
 const variants = {
   neutral: {
@@ -60,7 +60,7 @@ const reducer = (state, action) => {
           outer: OUTER_BODY,
           //   inner: INNER_BODY_HAPPY,
           animationVariant: variants.happy,
-          speed: 300
+          speed: 150
         }
       ];
     default:

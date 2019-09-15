@@ -13,22 +13,9 @@ const App = ({ ...props }) => {
   console.log(store.getState());
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Chick />
-      </header>
+    <div className="App-header">
+      <h1>hover over me!</h1>
+      <Chick />
     </div>
   );
 };

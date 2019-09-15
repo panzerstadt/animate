@@ -2,7 +2,6 @@
   position: relative;
   height: 300px;
   width: 300px;
-  border: 1px solid red;
 }
 
 .bodyPart {
@@ -26,4 +25,9 @@
 .hand {
   composes: bodyPart;
   z-index: 0;
+}
+
+.feet {
+  composes: bodyPart;
+  z-index: 2;
 }

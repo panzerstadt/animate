@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
 
+import useHover from "../hooks/useHover";
 import useInterval from "../hooks/useInterval";
 import Character from "../viewComponents/Chick";
 
@@ -8,23 +9,31 @@ import Character from "../viewComponents/Chick";
 // 2. define what the character can do
 // 3. export
 const Chick = ({ emotion, movement, ...props }) => {
-  // this is a component that joins what the fire looks like as well as
-  // what are the actions that a fire can do and exports it as a
-  // complete fire character
-  console.log(props);
-  const [bipolar, setBipolar] = useState(false);
-  useInterval(() => {
-    setBipolar(p => !p);
-  }, 5000);
+  // this is a component that joins what the character looks like as well as
+  // what are the actions that a character can do and exports it as a
+  // complete character
 
+  //   const [bipolar, setBipolar] = useState(false);
+  //   useInterval(() => {
+  //     setBipolar(p => !p);
+  //   }, 5000);
+
+  //   useEffect(() => {
+  //     bipolar ? props.becomeNeutral() : props.becomeHappy();
+  //   }, [bipolar]);
+
+  const ref = useRef();
+  const hover = useHover(ref);
   useEffect(() => {
-    bipolar ? props.becomeNeutral() : props.becomeHappy();
-  }, [bipolar]);
+    hover ? props.becomeHappy() : props.becomeNeutral();
+  }, [hover]);
 
-  console.log(emotion);
-  console.log(movement);
-  console.log("FIRE COMPONENT: ", emotion.emotion);
-  return <Character emotion={emotion.emotion} movement={movement.movement} />;
+  console.log("CHICK COMPONENT: ", emotion.emotion);
+  return (
+    <div ref={ref}>
+      <Character emotion={emotion.emotion} movement={movement.movement} />
+    </div>
+  );
 };
 
 const mapStateToProps = state => {

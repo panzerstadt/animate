@@ -1,5 +1,5 @@
-import LEFT from "../../../assets/chick_eyes_left.png";
-import RIGHT from "../../../assets/chick_eyes_right.png";
+import LEFT from "../assets/chick_eyes_left.png";
+import RIGHT from "../assets/chick_eyes_right.png";
 
 const variants = {
   neutral: {
@@ -77,7 +77,7 @@ const reducer = (state, action) => {
             eyebrowRight: ""
           },
           animationVariant: variants.happy,
-          speed: 300
+          speed: 100
         }
       ];
     default:

@@ -5,19 +5,19 @@
   width: 100%;
 }
 
-.hand {
-  height: 25px;
-  top: 25%;
+.foot {
+  height: 50px;
+  bottom: -5%;
 }
 
-.leftHand {
-  composes: hand;
+.leftFoot {
+  composes: foot;
   position: absolute;
-  left: -5%;
+  left: 12%;
 }
 
-.rightHand {
-  composes: hand;
+.rightFoot {
+  composes: foot;
   position: absolute;
-  left: 88%;
+  left: 75%;
 }

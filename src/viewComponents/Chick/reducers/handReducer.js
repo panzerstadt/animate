@@ -1,5 +1,5 @@
-import LEFT from "../../../assets/chick_left-hand.png";
-import RIGHT from "../../../assets/chick_right-hand.png";
+import LEFT from "../assets/chick_left-hand.png";
+import RIGHT from "../assets/chick_right-hand.png";
 
 const variants = {
   neutral: {
@@ -52,6 +52,12 @@ const variants = {
   }
 };
 
+const transitions = {
+  happy: {
+    stiffness: 1000
+  }
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "HAPPY":
@@ -64,8 +70,11 @@ const reducer = (state, action) => {
             eyebrowLeft: "",
             eyebrowRight: ""
           },
-          animationVariant: variants.happy,
-          speed: 300
+          animationVariant: {
+            ...variants.happy,
+            transition: { ...transitions.happy }
+          },
+          speed: 250
         }
       ];
     default:
@@ -78,7 +87,10 @@ const reducer = (state, action) => {
             eyebrowLeft: "",
             eyebrowRight: ""
           },
-          animationVariant: variants.neutral,
+          animationVariant: {
+            ...variants.neutral,
+            transition: { ...transitions.neutral }
+          },
           speed: 800
         }
       ];
